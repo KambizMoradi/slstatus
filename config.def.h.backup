@@ -20,7 +20,7 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD/FreeBSD
  * cpu_perc            cpu usage in percent            NULL
  * cpu_freq            cpu frequency in MHz            NULL
-datetime            date and time                   format string (%F %T)
+ * datetime            date and time                   format string (%F %T)
  * disk_free           free disk space in GB           mountpoint path (/)
  * disk_perc           disk usage in percent           mountpoint path (/)
  * disk_total          total disk space in GB          mountpoint path (/")
@@ -35,20 +35,20 @@ datetime            date and time                   format string (%F %T)
  *                                                     see keyboard_indicators.c
  * keymap              layout (variant) of current     NULL
  *                     keymap
- load_avg            load average                    NULL
-netspeed_rx         receive network speed           interface name (wlan0)
-netspeed_tx         transfer network speed          interface name (wlan0)
+ * load_avg            load average                    NULL
+ * netspeed_rx         receive network speed           interface name (wlan0)
+ * netspeed_tx         transfer network speed          interface name (wlan0)
  * num_files           number of files in a directory  path
  *                                                     (/home/foo/Inbox/cur)
-ram_free            free memory in GB               NULL
+ * ram_free            free memory in GB               NULL
  * ram_perc            memory usage in percent         NULL
  * ram_total           total memory size in GB         NULL
-ram_used            used memory in GB               NULL
+ * ram_used            used memory in GB               NULL
  * run_command         custom shell command            command (echo foo)
-swap_free           free swap in GB                 NULL
+ * swap_free           free swap in GB                 NULL
  * swap_perc           swap usage in percent           NULL
  * swap_total          total swap size in GB           NULL
-swap_used           used swap in GB                 NULL
+ * swap_used           used swap in GB                 NULL
  * temp                temperature in degree celsius   sensor file
  *                                                     (/sys/class/thermal/...)
  *                                                     NULL on OpenBSD
@@ -63,12 +63,5 @@ swap_used           used swap in GB                 NULL
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_tx, " [⇅ %s/","wlp3s0" },
-	{ netspeed_rx, "%s] ","wlp3s0" },
-	{ swap_used, "[⇌ %s/",NULL},
-	{ swap_free, "%s] ",NULL},
-	{ ram_used, "[%s/",NULL},
-	{ ram_free, "%s] ",NULL},
-	{ load_avg, "[%s] ",NULL},
-	{ datetime, "%s","%F %T" },
+	{ datetime, "%s",           "%F %T" },
 };
