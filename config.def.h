@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 500;
+const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -63,10 +63,8 @@ swap_used           used swap in GB                 NULL
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_tx, " [⇅ %s/","wlp3s0" },
-	{ netspeed_rx, "%s] ","wlp3s0" },
-	{ swap_used, "[⇌ %s/",NULL},
-	{ swap_free, "%s] ",NULL},
+	{ netspeed_tx, " [%9s ⇅","wlp3s0" },
+	{ netspeed_rx, "%9s] ","wlp3s0" },
 	{ ram_used, "[%s/",NULL},
 	{ ram_free, "%s] ",NULL},
 	{ load_avg, "[%s] ",NULL},
