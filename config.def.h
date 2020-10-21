@@ -63,10 +63,9 @@ swap_used           used swap in GB                 NULL
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_tx, " [%9s ⇅","wlp3s0" },
-	{ netspeed_rx, "%9s] ","wlp3s0" },
-	{ ram_used, "[%s/",NULL},
-	{ ram_free, "%s] ",NULL},
-	{ load_avg, "[%s] ",NULL},
+	{ netspeed_tx, "%9s |","wlp3s0" },
+	{ netspeed_rx, "%9s |","wlp3s0" },
+	{ ram_used, " %6s |",NULL},
+	{ load_avg, " %s | ",NULL},
 	{ datetime, "%s","%F %T" },
 };
