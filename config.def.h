@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 500;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -33,7 +33,7 @@ datetime            date and time                   format string (%F %T)
  * kernel_release      `uname -r`                      NULL
  * keyboard_indicators caps/num lock indicators        format string (c?n?)
  *                                                     see keyboard_indicators.c
- * keymap              layout (variant) of current     NULL
+ keymap              layout (variant) of current     NULL
  *                     keymap
  load_avg            load average                    NULL
 netspeed_rx         receive network speed           interface name (wlan0)
@@ -45,10 +45,10 @@ ram_free            free memory in GB               NULL
  * ram_total           total memory size in GB         NULL
 ram_used            used memory in GB               NULL
  * run_command         custom shell command            command (echo foo)
-swap_free           free swap in GB                 NULL
+ * swap_free           free swap in GB                 NULL
  * swap_perc           swap usage in percent           NULL
  * swap_total          total swap size in GB           NULL
-swap_used           used swap in GB                 NULL
+ * swap_used           used swap in GB                 NULL
  * temp                temperature in degree celsius   sensor file
  *                                                     (/sys/class/thermal/...)
  *                                                     NULL on OpenBSD
@@ -63,9 +63,10 @@ swap_used           used swap in GB                 NULL
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_tx, "%9s |","wlp3s0" },
-	{ netspeed_rx, "%9s |","wlp3s0" },
-	{ ram_used, " %6s |",NULL},
-	{ load_avg, " %s | ",NULL},
-	{ datetime, "%s","%F %T" },
+    { netspeed_tx, "%8s","enp4s0" },
+	{ netspeed_rx, ",%7s","enp4s0" },
+    { keymap, " %s","NULL" },
+	{ ram_used, " %7s",NULL},
+	{ load_avg, "  %s",NULL},
+	{ datetime, "  %s","%F %T" },
 };

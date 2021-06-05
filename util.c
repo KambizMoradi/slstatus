@@ -115,7 +115,7 @@ fmt_human(uintmax_t num, int base)
 		break;
     case 3:
         scaled = num /1024 /1024;
-        return bprintf("%.0f %s", scaled, "Mb");
+        return bprintf("%.0f %s", scaled, "MB");
 
 	default:
 		warn("fmt_human: Invalid base");
@@ -127,7 +127,7 @@ fmt_human(uintmax_t num, int base)
 		scaled /= base;
 	}
 
-	return bprintf("%.2f %s", scaled, prefix[i]);
+	return bprintf("%.1f %s", scaled, prefix[i]);
 }
 
 int

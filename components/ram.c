@@ -73,8 +73,7 @@
 			return NULL;
 		}
 
-		return fmt_human((total - free - buffers - cached) * 1024,
-		                 3);/*3 for show in Mb. by default it is 1024*/
+		return fmt_human((total - free - buffers - cached) * 1024,3);/*3 for show in Mb. by default it is 1024*/
 	}
 #elif defined(__OpenBSD__)
 	#include <stdlib.h>
