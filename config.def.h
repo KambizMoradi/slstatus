@@ -63,7 +63,7 @@ ram_used            used memory in GB               NULL
  */
 static const struct arg args[] = {
 	/* function format          argument */
-    { netspeed_tx, "%8s","enp4s0" },
+    { netspeed_tx, "%13s","enp4s0" },
 	{ netspeed_rx, ",%7s","enp4s0" },
     { keymap, " %s","NULL" },
 	{ ram_used, " %7s",NULL},
