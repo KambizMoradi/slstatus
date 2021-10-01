@@ -65,6 +65,8 @@ static const struct arg args[] = {
 	/* function format          argument */
     { netspeed_tx, "%13s","enp4s0" },
 	{ netspeed_rx, ",%7s","enp4s0" },
+    /*{ netspeed_tx, "%13s","wlp3s0" },*/
+	/*{ netspeed_rx, ",%7s","wlp3s0" },*/
     { keymap, " %s","NULL" },
 	{ ram_used, " %7s",NULL},
 	{ load_avg, "  %s",NULL},
