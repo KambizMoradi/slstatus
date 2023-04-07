@@ -65,8 +65,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ keymap,	"%s ",				NULL},
-	{ ram_used, "%9s ",			NULL},
-	{ load_avg, "%s ",				NULL},
-	{ datetime, "%s",			"%F %T" },
+	{ netspeed_tx,	"%s ",			"wlp3s0"},
+	{ netspeed_rx,	"%s ",			"wlp3s0"},
+	{ keymap,		"%s ",				NULL},
+	{ ram_used,		"%9s ",				NULL},
+	{ load_avg,		"%s ",				NULL},
+	{ datetime,		"%s",			"%F %T" },
 };
