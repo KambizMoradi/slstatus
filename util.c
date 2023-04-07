@@ -109,6 +109,9 @@ fmt_human(uintmax_t num, int base)
 		prefix = prefix_1024;
 		prefixlen = LEN(prefix_1024);
 		break;
+	case 3:
+		scaled = num/1024/1024;
+		return bprintf("%.0f %s", scaled, "Mb");
 	default:
 		warn("fmt_human: Invalid base");
 		return NULL;

@@ -71,7 +71,7 @@
 			return NULL;
 
 		used = (total - free - buffers - cached);
-		return fmt_human(used * 1024, 1024);
+		return fmt_human(used * 1024, 3);
 	}
 #elif defined(__OpenBSD__)
 	#include <stdlib.h>
