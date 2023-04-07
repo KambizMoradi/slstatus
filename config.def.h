@@ -65,5 +65,6 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+	{ load_avg, "%s ",				NULL},
 	{ datetime, "%s",           "%F %T" },
 };
