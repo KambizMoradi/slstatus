@@ -110,11 +110,17 @@ fmt_human(uintmax_t num, int base)
 		prefixlen = LEN(prefix_1024);
 		break;
 	case 3:
-		scaled = num/1024/1024;
-		return bprintf("%.0f %s", scaled, "Mb");
+		scaled = num/1000;
+		scaled = scaled/1000;
+		return bprintf("%.0f %s", scaled, "MB");
 	case 4:
 		scaled = num/1000;
-		return bprintf("%.0f %s", scaled, "Kb");
+		return bprintf("%.0f %s", scaled, "KB");
+	case 5:
+		scaled = num/1000;
+		scaled = scaled/1000;
+		scaled = scaled/1000;
+		return bprintf("%.1f %s", scaled, "GHz");
 	default:
 		warn("fmt_human: Invalid base");
 		return NULL;
