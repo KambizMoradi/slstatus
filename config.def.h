@@ -65,12 +65,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_tx,	" ^b#FF0000c#ffffff^🢁%8s^b#000000c#ffffff^ ",			"enp6s0"},
-	{ netspeed_rx,	"^b#FF0000c#ffffff^🢃%8s^b#000000c#ffffff^ ",			"enp6s0"},
-	{ ram_used,		"^b#FF0000c#ffffff^%8s^b#000000c#ffffff^ ",				NULL},
-	{ cpu_perc,		"^b#FF0000c#ffffff^%3s%% ",				NULL},
+	{ netspeed_tx,	" ^b#005577c#ffffff^🢁%8s^b#000000c#ffffff^ ",			"enp6s0"},
+	{ netspeed_rx,	"^b#005577c#ffffff^🢃%8s^b#000000c#ffffff^ ",			"enp6s0"},
+	{ ram_used,		"^b#005577c#ffffff^%8s^b#000000c#ffffff^ ",				NULL},
+	{ temp,			"^b#005577c#ffffff^%s°C ",								("/sys/class/hwmon/hwmon2/temp1_input")},
+	{ cpu_perc,		"%3s%% ",												NULL},
 	{ cpu_freq,		"%s ",				NULL},
-	{ load_avg,		"%s^b#000000c#ffffff^ ",				NULL},
-	{ keymap,		"^b#FF0000c#ffffff^%s^b#000000c#ffffff^ ",				NULL},
+	{ load_avg,		" %s^b#000000c#ffffff^ ",								NULL},
+	{ keymap,		"^b#005577c#ffffff^%s^b#000000c#ffffff^ ",				NULL},
 	{ datetime,		"%s",			"%F %T" },
 };
