@@ -18,6 +18,17 @@
 
 		return bprintf("%ju", temp / 1000);
 	}
+
+	const char *
+	fan(const char *file)
+	{
+		uintmax_t fan;
+
+		if (pscanf(file, "%ju", &fan) != 1)
+			return NULL;
+
+		return bprintf("%ju", fan);
+	}
 #elif defined(__OpenBSD__)
 	#include <stdio.h>
 	#include <sys/time.h> /* before <sys/sensors.h> for struct timeval */

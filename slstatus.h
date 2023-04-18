@@ -67,6 +67,8 @@ const char *swap_used(const char *unused);
 
 /* temperature */
 const char *temp(const char *);
+const char *fan(const char *);
+
 
 /* uptime */
 const char *uptime(const char *unused);

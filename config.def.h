@@ -64,15 +64,17 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ netspeed_tx,	" ^b#005577c#ffffff^🢁%8s^b#000000c#ffffff^ ",			"enp6s0"},
-	{ netspeed_rx,	"^b#005577c#ffffff^🢃%8s^b#000000c#ffffff^ ",			"enp6s0"},
-	{ ram_used,		"^b#005577c#ffffff^%8s^b#000000c#ffffff^ ",				NULL},
-	{ cpu_perc,		"^b#005577c#ffffff^%3s%% ",				NULL},
-	{ cpu_freq,		"%s ",				NULL},
-	{ temp,		"%s°C ",				("/sys/class/hwmon/hwmon2/temp1_input")},
-	{ load_avg,		" %s^b#000000c#ffffff^ ",				NULL},
-	{ temp,		"^b#005577c#ffffff^%s°C^b#000000c#ffffff^ ",				("/sys/class/hwmon/hwmon1/temp1_input")},
-	{ keymap,		"^b#005577c#ffffff^%s^b#000000c#ffffff^ ",				NULL},
-	{ datetime,		"^b#005577c#ffffff^%s^b#000000c#ffffff^",			"%F %T" },
+	/* function format		argument */
+	{ netspeed_tx,			" ^b#C62A88 c#ffffff^🢁%8s^d^ ",										"enp6s0"},
+	{ netspeed_rx,			"^b#29C7AC c#150485^🢃%8s^d^ ",										"enp6s0"},
+	{ ram_used,				"^b#423F3E c#ffffff^%8s^d^ ",											NULL},
+	{ cpu_perc,				"^b#005577 c#ffffff^%3s%% ",											NULL},
+	{ cpu_freq,				"%s ",																	NULL},
+	{ temp,					"%s°C ",							("/sys/class/hwmon/hwmon2/temp1_input")},
+	{ load_avg,				" %s^b#000000 c#ffffff^ ",												NULL},
+	{ temp,					"^b#E94560 c#ffffff^%s°C ",		("/sys/class/hwmon/hwmon1/temp1_input")},
+	{ temp,					"%s°C ",		("/sys/class/hwmon/hwmon1/temp2_input")},
+	{ fan,					"%4s RPM^d^ ",		("/sys/class/hwmon/hwmon1/fan1_input")},
+	{ keymap,				"^b#005577 c#ffffff^%s^d^ ",											NULL},
+	{ datetime,				"%s",																"%F %T" },
 };
