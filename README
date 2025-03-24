@@ -18,6 +18,7 @@ Features
 - Available entropy
 - Username/GID/UID
 - Hostname
+- Disk IO (read, write and percentage) (Linux only)
 - IP address (IPv4 and IPv6)
 - Kernel version
 - Keyboard indicators
