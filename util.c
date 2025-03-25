@@ -109,6 +109,18 @@ fmt_human(uintmax_t num, int base)
 		prefix = prefix_1024;
 		prefixlen = LEN(prefix_1024);
 		break;
+  case 103:
+    scaled = num/1000;
+    return bprintf("%.0f %s", scaled, "K");
+  case 106:
+    scaled = num/1000;
+    scaled = scaled/1000;
+    return bprintf("%.0f %s", scaled, "M");
+  case 109:
+    scaled = num/1000;
+    scaled = scaled/1000;
+    scaled = scaled/1000;
+    return bprintf("%.1f %s", scaled, "G");
 	default:
 		warn("fmt_human: Invalid base");
 		return NULL;
