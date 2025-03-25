@@ -18,7 +18,8 @@
 		if (pscanf(CPU_FREQ, "%ju", &freq) != 1)
 			return NULL;
 
-		return fmt_human(freq * 1000, 1000);
+		// return fmt_human(freq * 1000, 1000);
+		return fmt_human(freq * 1000, 109);
 	}
 
 	const char *
