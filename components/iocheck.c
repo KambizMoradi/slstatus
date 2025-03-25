@@ -73,7 +73,7 @@
 			return NULL;
 		}
 		
-		return fmt_human((newin - oldin) * 1024, 1024);
+		return fmt_human((newin - oldin) * 1024, 1000);
 	}
 
 	const char *
@@ -91,7 +91,7 @@
 			return NULL;
 		}
 		
-		return fmt_human((newout - oldout) * 1024, 1024);
+		return fmt_human((newout - oldout) * 1024, 1000);
 	}
 
 	const char *
