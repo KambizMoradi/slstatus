@@ -67,6 +67,20 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+  /* function         format                        argument */
+	// { netspeed_tx,      "^b#29C7AC c#150485^%8s/",   "wlp3s0"},
+	// { netspeed_rx,      "%8s^d^",                     "wlp3s0"},
+  { netspeed_tx,      " ^b#C62A88^󰈁%6s",           "enp0s25"},
+	{ netspeed_rx,      "%6s^d^",                    "enp0s25"},
+  { io_out,           " ^b#423F3E^󰋊%6s",           NULL},
+  { io_in,            "^b#423F3E^%6s^d^",          NULL},
+	{ ram_used,         " ^b#423F3E ^%8s^d^ ",       NULL},
+	{ cpu_perc,         "^b#005577 ^%3s%% ",         NULL},
+	{ cpu_freq,         "%sHz^d^ ",                   NULL},
+  { load_avg,         "^b#005577^%s^d^ ",           NULL},
+  { temp,             "^b#005577^%2s󰔄^d^ ",         "/sys/class/thermal/thermal_zone3/temp"},
+  { battery_perc,     "^d^^c#00ff00^%s%% ",         "BAT0"},
+	{ battery_perc,     "%s%% ",                      "BAT1"},
+  { keymap,           "%s^d^ ",                     NULL},
+	{ datetime,         "%s",                         "%F %T"},
 };
